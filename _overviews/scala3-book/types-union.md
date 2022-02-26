@@ -77,13 +77,13 @@ This REPL example shows how a union type can be used when binding a variable to 
 
 ````
 scala> val a = if (true) name else password
-val a: Object = Username(Eve)
+val a: Any = Username(Eve)
 
 scala> val b: Password | Username = if (true) name else password
 val b: Password | Username = Username(Eve)
 ````
 
-The type of `a` is `Object`, which is a supertype of `Username` and `Password`, but not the *least* supertype, `Password | Username`.
+The type of `a` is `Any`, which is a supertype of `Username` and `Password`, but not the *least* supertype, `Password | Username`.
 If you want the least supertype you have to give it explicitly, as is done for `b`.
 
 > Union types are duals of intersection types.
